@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priyanshu Prasad Gupta | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+ <!-- 1. Load TypeIt JS library -->
+<script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
+
+<!-- 2. Run ALL JavaScript AFTER DOM is ready -->
+<!-- Your TypeIt JS code -->
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    // Typing effect
+    const typeEffect = new TypeIt("#role", {
+      strings: [
+        "Machine Learning Enthusiast",
+        "Android Developer",
+        "Cloud Learner",
+        "Java Developer",
+        "Tech Explorer 🚀"
+      ],
+      speed: 80,
+      breakLines: false,
+      loop: true,
+      deleteSpeed: 50,
+      nextStringDelay: 1200,
+      afterString: () => {
+        document.querySelector("#role").classList.add("type-effect");
+      }
+    });
+    typeEffect.go();
+
+    // Animate skill circles on scroll
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const circle = entry.target;
+            const percent = circle.getAttribute("data-percent");
+            const angle = (percent / 100) * 360;
+
+            let currentAngle = 0;
+            const step = () => {
+              currentAngle += 4;
+              if (currentAngle <= angle) {
+                circle.style.setProperty('--angle', `${currentAngle}deg`);
+                requestAnimationFrame(step);
+              }
+            };
+            step();
+
+            observer.unobserve(circle); // Animate once
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    document.querySelectorAll(".circle").forEach(circle => {
+      observer.observe(circle);
+    });
+  });
+</script>
+
+
+
+
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">Priyanshu Prasad Gupta</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <header>
+
+    <img src="images/profile.jpeg" alt="Priyanshu Prasad Gupta" class="profile-pic" />
+    <h1>Priyanshu Prasad Gupta</h1>
+    <p id="role" class="type-effect"></p>
+    <div class="socials">
+      <a href="https://linkedin.com/in/priyanshu-prasad-gupta">LinkedIn</a> |
+      <a href="https://github.com/Priyanshu2763">GitHub</a> |
+      <a href="mailto:priyanshugupta161@gmail.com">Email</a>
+    </div>
+    <!-- <button onclick="toggleTheme()">Toggle Theme</button> -->
+    <br />
+    <a href="documents/Priyanshu_Resume.pdf" download class="resume-button">Download Resume</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate Computer Science undergrad driven by a love for building intelligent and intuitive tech solutions. With a strong foundation in C++, Java, and Python, I’ve applied my skills to diverse projects—from designing machine learning-based food recommendation systems to building dynamic Java applications like a Sudoku solver visualizer. My training in Data Structures & Algorithms and Cloud Computing sharpened both my problem-solving and system design capabilities. Whether it's creating interactive web interfaces or deploying AI models, I’m constantly exploring new technologies that blend creativity and logic to solve real-world challenges.</p>
+  </section>
+
+  <section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <span>Python</span>
+      <div class="circle" data-percent="85"><span>85%</span></div>
+    </div>
+    <div class="skill-card">
+      <span>Java</span>
+      <div class="circle" data-percent="90"><span>90%</span></div>
+    </div>
+    <div class="skill-card">
+      <span>C++</span>
+      <div class="circle" data-percent="85"><span>85%</span></div>
+    </div>
+    <div class="skill-card">
+      <span>Android</span>
+      <div class="circle" data-percent="70"><span>70%</span></div>
+    </div>
+    <div class="skill-card">
+      <span>Cloud</span>
+      <div class="circle" data-percent="80"><span>80%</span></div>
+    </div>
+    <div class="skill-card">
+      <span>HTML/CSS</span>
+      <div class="circle" data-percent="85"><span>85%</span></div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="training">
+    <h2>Training</h2>
+    <ul>
+      <li><strong>DSA Training</strong> – Hitbullseye & LPU (May 2024 - Jun 2024)</li>
+      <div class="certificates">
+        <img src="images/certificate1.jpg" alt="MongoDB Certificate" />
+      </div>
+      <li><strong>Cloud Computing</strong> – CipherSchools & LPU (Jan 2025 - Feb 2025)</li>
+      <div class="certificates">
+        <img src="images/certificate2.jpg" alt="ChatGPT ADA Certificate" />
+      </div>
+    </ul>
+  </section>
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="experience-card">
+    <h3>Freelancer</h3>
+    <p class="company">Outlier</p>
+    <p class="duration">Nov 2024 – Jan 2025</p>
+    <p class="description">
+      Trained AI models for advanced mathematics, developed data-driven learning solutions,
+      enhanced algorithm accuracy, and optimized AI-driven educational tools.
+    </p>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">Machine Learning</span>
+      <span class="tag">AI Models</span>
+    </div>
+  </div>
+</section>
+
+
+  <section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-container">
+   <div class="project-card">
+  <div class="card-inner">
+    <!-- Front Side -->
+    <div class="card-front">
+      <img src="images/project1.png" alt="Combining Autocorrect and Spellchecking" class="project-img" />
+      <h3></h3>
+    </div>
+
+    <!-- Back Side -->
+    <div class="card-back">
+      <p>An NLP-based project that combines autocorrect and spellchecking functionalities.</p>
+      <a href="https://github.com/Priyanshu2763/natural-language-processing-term-paper" target="_blank">GitHub</a>
+    </div>
+  </div>
+</div>
+
+
+   <div class="project-card">
+  <div class="card-inner">
+    <!-- Front Side -->
+    <div class="card-front">
+      <img src="images/project2.png" alt="Food Recommendation System" class="project-img" />
+      <h3></h3>
+    </div>
+
+    <!-- Back Side -->
+    <div class="card-back">
+      <p>A Machine Learning model that recommends food based on user preferences.</p>
+      <a href="https://github.com/Priyanshu2763/Machine-Learning-2-term-paper" target="_blank">GitHub</a>
+    </div>
+  </div>
+</div>
+
+
+    <div class="project-card">
+  <div class="card-inner">
+    <!-- Front Side -->
+    <div class="card-front">
+      <img src="images/project3.png" alt="Sudoku Solver Visualizer" class="project-img" />
+      <h3></h3>
+    </div>
+
+    <!-- Back Side -->
+    <div class="card-back">
+      <p>A Sudoku solver built using Java and Swing, with a visual solver interface.</p>
+      <a href="https://github.com/Priyanshu2763/Sudokusolvervisualizer" target="_blank">GitHub</a>
+    </div>
+  </div>
+</div>
+
+   <div class="project-card">
+  <div class="card-inner">
+    <!-- Front Side -->
+    <div class="card-front">
+      <img src="images/project4.png" alt="Number Game" class="project-img" />
+      <h3></h3>
+    </div>
+
+    <!-- Back Side -->
+    <div class="card-back">
+      <p>__A number-guessing game built in  _Python with interactive user interface.</p>
+      <a href="https://github.com/Priyanshu2763/pynumgame" target="_blank">GitHub</a>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+ <section id="education">
+  <h2>Education</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-icon">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <div class="timeline-content">
+        <h3>B.Tech in Computer Science</h3>
+        <p class="institution">Lovely Professional University</p>
+        <p class="dates">2022 – 2026</p>
+        <p class="cgpa">CGPA: 7.28</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-icon">
+        <i class="fas fa-school"></i>
+      </div>
+      <div class="timeline-content">
+        <h3>12th Grade (CBSE)</h3>
+        <p class="institution">DAV Public School, Jharkhand</p>
+        <p class="dates">2020 – 2021</p>
+        <p class="percentage">Percentage: 81%</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-icon">
+        <i class="fas fa-school"></i>
+      </div>
+      <div class="timeline-content">
+        <h3>10th Grade (CBSE)</h3>
+        <p class="institution">DAV Public School, Jharkhand</p>
+        <p class="dates">2018 – 2019</p>
+        <p class="percentage">Percentage: 82%</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <footer>
+    <p>© 2025 Priyanshu Prasad Gupta | Built with ❤</p>
+  </footer>
+</body>
+</html>

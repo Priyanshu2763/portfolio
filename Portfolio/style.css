@@ -1,0 +1,567 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.dark-theme {
+  background-color: #1c1c1c;
+  color: #f4f4f4;
+}
+
+header {
+  background: #007acc;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.dark-theme header {
+  background: #005a8e;
+}
+
+header .socials a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.certificates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.certificates img {
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.certificates img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+footer {
+  background: #007acc;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.dark-theme footer {
+  background: #005a8e;
+}
+
+@media (max-width: 600px) {
+  .certificates img {
+    max-width: 100%;
+  }
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #007acc;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 2px solid #007acc;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.resume-button:hover {
+  background-color: #007acc;
+  color: white;
+}
+
+#skills {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card span {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.circle {
+  --angle: 0deg;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: conic-gradient(#007acc var(--angle), #e0e0e0 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
+  color: #333;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.circle span {
+  position: relative;
+  z-index: 1;
+  font-size: 0.9rem;
+}
+
+.dark-theme .circle::before {
+  background-color: #1c1c1c;
+}
+
+.dark-theme .circle {
+  background: conic-gradient(#00bfff var(--angle), #444 0deg);
+  color: #fff;
+}
+/* Add this to your style.css file */
+.type-effect {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Add this to your style.css */
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.project-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.project-info a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.project-info a:hover {
+  text-decoration: underline;
+}
+/* Education Section Styling */
+#education {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Education Timeline */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 50px;
+}
+
+.edu-icon {
+  position: absolute;
+  left: 0;
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.edu-details {
+  padding-left: 20px;
+}
+
+.edu-details h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.institution {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.dates, .cgpa, .percentage {
+  font-size: 1rem;
+  color: #777;
+}
+
+.edu-item:hover .edu-details h3 {
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Adding a line between items */
+.education-item:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  width: 2px;
+  height: 100%;
+  background-color: #ddd;
+  transform: translateY(-50%);
+}
+
+/* Hover effects */
+.education-item:hover {
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.education-item:hover .edu-icon {
+  color: #007bff;
+}
+.circle {
+  transition: background 0.4s ease-out;
+}
+.project-card {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
+  margin: auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.project-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card-front img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-front h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-back {
+  background-color: #007acc;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 20px;
+}
+
+.card-back a {
+  color: #fff;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: inline-block;
+}
+#education {
+  padding: 2rem;
+}
+
+.timeline {
+  position: relative;
+  border-left: 3px solid #0ea5e9;
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  background: #0ea5e9;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
+.timeline-content {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.timeline-content h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.timeline-content .institution {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #475569;
+}
+
+.timeline-content .dates,
+.timeline-content .cgpa,
+.timeline-content .percentage {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+#experience {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.experience-card {
+  background-color: #ffffff;
+  color: #333;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-top: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.experience-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+  color: #007acc;
+}
+
+.experience-card .company {
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.experience-card .duration {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+/* === Navbar Styling === */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #007acc;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #007acc;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    display: none; /* Optional: make it a toggle menu */
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+#about, #skills, #training, #experience, #projects, #education {
+  scroll-margin-top: 80px;
+}
